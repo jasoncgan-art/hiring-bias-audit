@@ -1,0 +1,33 @@
+{
+  "synthetic": true,
+  "seed": 42,
+  "n_applicants": 7500,
+  "hire_rate": 0.5701,
+  "injected_bias": {
+    "label_bias_logit": {
+      "male": 0.45,
+      "white": 0.25
+    },
+    "referral_rate_by_gender_race": {
+      "Male/White": 0.24,
+      "Female/White": 0.16
+    },
+    "referral_rate_default": 0.1,
+    "note": "Age band has NO injected bias (control dimension)."
+  },
+  "column_roles": {
+    "features": [
+      "years_experience",
+      "education_level",
+      "skill_assessment_score",
+      "referral_flag",
+      "employment_gap_months"
+    ],
+    "protected_attributes": [
+      "gender",
+      "race_ethnicity",
+      "age_band"
+    ],
+    "label": "hire"
+  }
+}

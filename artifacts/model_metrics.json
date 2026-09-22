@@ -1,0 +1,19 @@
+{
+  "model": "LogisticRegression(C=1.0, max_iter=1000)",
+  "features": [
+    "years_experience",
+    "skill_assessment_score",
+    "referral_flag",
+    "employment_gap_months",
+    "education_level"
+  ],
+  "protected_attributes_excluded": [
+    "gender",
+    "race_ethnicity",
+    "age_band"
+  ],
+  "train_n": 5625,
+  "test_n": 1875,
+  "test_accuracy_at_0.5": 0.6475,
+  "test_auc": 0.6931
+}
