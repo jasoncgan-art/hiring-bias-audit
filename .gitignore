@@ -1,26 +1,13 @@
-# Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-
-# Virtual environments
+.pytest_cache/
 .venv/
-venv/
-ENV/
-
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.idea/
-.vscode/
+.env
+*.pt
+*.joblib
+/data/
+/artifacts/
+/private_data/
+/private_reports/
+/tickets/*.json
+*.log

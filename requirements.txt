@@ -1,4 +1,6 @@
-scikit-learn==1.9.1
-pandas==3.0.6
-numpy==2.5.3
-matplotlib==3.11.2
+# Versions exercised in this revision on Python 3.12.
+scikit-learn==1.8.0
+pandas==2.2.3
+numpy==2.3.5
+matplotlib==3.10.8
+pytest==9.1.1

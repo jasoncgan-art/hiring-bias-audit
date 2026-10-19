@@ -1,69 +1,71 @@
 {
+  "threshold_fit_split": "calibration",
+  "calibration_n": 1125,
   "four_fifths_rule": 0.8,
   "target_selection_rate": 0.25,
   "scenarios": {
     "baseline": {
       "summary": {
-        "selection_rate": 0.2501,
-        "accuracy": 0.5776,
-        "auc": 0.6931,
-        "n_selected": 469,
+        "selection_rate": 0.2416,
+        "accuracy": 0.5744,
+        "auc": 0.6947,
+        "n_selected": 453,
         "n_total": 1875,
-        "threshold": 0.7002
+        "threshold": 0.7066
       },
       "groups": [
         {
           "dimension": "gender",
           "group": "Female",
           "n": 918,
-          "selection_rate": 0.2451,
-          "impact_ratio": 0.9613,
-          "ppv": 0.76,
+          "selection_rate": 0.2386,
+          "impact_ratio": 0.9757,
+          "ppv": 0.7626,
           "violates_four_fifths": false
         },
         {
           "dimension": "gender",
           "group": "Male",
           "n": 957,
-          "selection_rate": 0.255,
+          "selection_rate": 0.2445,
           "impact_ratio": 1.0,
-          "ppv": 0.8279,
+          "ppv": 0.8333,
           "violates_four_fifths": false
         },
         {
           "dimension": "race_ethnicity",
           "group": "Asian",
           "n": 343,
-          "selection_rate": 0.242,
-          "impact_ratio": 0.7618,
-          "ppv": 0.7711,
+          "selection_rate": 0.2303,
+          "impact_ratio": 0.7403,
+          "ppv": 0.7595,
           "violates_four_fifths": true
         },
         {
           "dimension": "race_ethnicity",
           "group": "Black",
           "n": 416,
-          "selection_rate": 0.1803,
-          "impact_ratio": 0.5676,
-          "ppv": 0.72,
+          "selection_rate": 0.1707,
+          "impact_ratio": 0.5486,
+          "ppv": 0.7324,
           "violates_four_fifths": true
         },
         {
           "dimension": "race_ethnicity",
           "group": "Hispanic",
           "n": 351,
-          "selection_rate": 0.1937,
-          "impact_ratio": 0.6099,
-          "ppv": 0.8088,
+          "selection_rate": 0.1852,
+          "impact_ratio": 0.5952,
+          "ppv": 0.8308,
           "violates_four_fifths": true
         },
         {
           "dimension": "race_ethnicity",
           "group": "White",
           "n": 765,
-          "selection_rate": 0.3176,
+          "selection_rate": 0.3111,
           "impact_ratio": 1.0,
-          "ppv": 0.823,
+          "ppv": 0.8235,
           "violates_four_fifths": false
         },
         {
@@ -71,7 +73,7 @@
           "group": "18-29",
           "n": 464,
           "selection_rate": 0.069,
-          "impact_ratio": 0.1053,
+          "impact_ratio": 0.1092,
           "ppv": 0.75,
           "violates_four_fifths": true
         },
@@ -79,18 +81,18 @@
           "dimension": "age_band",
           "group": "30-49",
           "n": 1034,
-          "selection_rate": 0.1838,
-          "impact_ratio": 0.2805,
-          "ppv": 0.8316,
+          "selection_rate": 0.177,
+          "impact_ratio": 0.2803,
+          "ppv": 0.8361,
           "violates_four_fifths": true
         },
         {
           "dimension": "age_band",
           "group": "50+",
           "n": 377,
-          "selection_rate": 0.6552,
+          "selection_rate": 0.6313,
           "impact_ratio": 1.0,
-          "ppv": 0.7733,
+          "ppv": 0.7773,
           "violates_four_fifths": false
         },
         {
@@ -98,7 +100,7 @@
           "group": "Female / Asian",
           "n": 167,
           "selection_rate": 0.2515,
-          "impact_ratio": 0.6857,
+          "impact_ratio": 0.6957,
           "ppv": 0.7619,
           "violates_four_fifths": true
         },
@@ -106,8 +108,347 @@
           "dimension": "gender_x_race",
           "group": "Female / Black",
           "n": 198,
+          "selection_rate": 0.2071,
+          "impact_ratio": 0.5728,
+          "ppv": 0.7805,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / Hispanic",
+          "n": 167,
+          "selection_rate": 0.2096,
+          "impact_ratio": 0.5798,
+          "ppv": 0.8,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / White",
+          "n": 386,
+          "selection_rate": 0.2617,
+          "impact_ratio": 0.7239,
+          "ppv": 0.7426,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / Asian",
+          "n": 176,
+          "selection_rate": 0.2102,
+          "impact_ratio": 0.5816,
+          "ppv": 0.7568,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / Black",
+          "n": 218,
+          "selection_rate": 0.1376,
+          "impact_ratio": 0.3807,
+          "ppv": 0.6667,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / Hispanic",
+          "n": 184,
+          "selection_rate": 0.163,
+          "impact_ratio": 0.451,
+          "ppv": 0.8667,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / White",
+          "n": 379,
+          "selection_rate": 0.3615,
+          "impact_ratio": 1.0,
+          "ppv": 0.8832,
+          "violates_four_fifths": false
+        }
+      ]
+    },
+    "threshold_tuning": {
+      "summary": {
+        "selection_rate": 0.2501,
+        "accuracy": 0.5616,
+        "auc": 0.6947,
+        "n_selected": 469,
+        "n_total": 1875
+      },
+      "group_thresholds": {
+        "Female / Asian": 0.6943994774257773,
+        "Female / Black": 0.6802853684837646,
+        "Female / Hispanic": 0.6450299580998462,
+        "Female / White": 0.7174846460117676,
+        "Male / Asian": 0.6692660436087388,
+        "Male / Black": 0.6601826189753445,
+        "Male / Hispanic": 0.7094412818421287,
+        "Male / White": 0.7616043216165326
+      },
+      "groups": [
+        {
+          "dimension": "gender",
+          "group": "Female",
+          "n": 918,
+          "selection_rate": 0.268,
+          "impact_ratio": 1.0,
+          "ppv": 0.7317,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "gender",
+          "group": "Male",
+          "n": 957,
+          "selection_rate": 0.233,
+          "impact_ratio": 0.8696,
+          "ppv": 0.7982,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "Asian",
+          "n": 343,
+          "selection_rate": 0.2828,
+          "impact_ratio": 1.0,
+          "ppv": 0.7526,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "Black",
+          "n": 416,
+          "selection_rate": 0.2356,
+          "impact_ratio": 0.833,
+          "ppv": 0.6837,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "Hispanic",
+          "n": 351,
+          "selection_rate": 0.2336,
+          "impact_ratio": 0.8261,
+          "ppv": 0.7439,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "White",
+          "n": 765,
+          "selection_rate": 0.251,
+          "impact_ratio": 0.8875,
+          "ppv": 0.8177,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "age_band",
+          "group": "18-29",
+          "n": 464,
+          "selection_rate": 0.0625,
+          "impact_ratio": 0.0928,
+          "ppv": 0.6897,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "age_band",
+          "group": "30-49",
+          "n": 1034,
+          "selection_rate": 0.1799,
+          "impact_ratio": 0.267,
+          "ppv": 0.7849,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "age_band",
+          "group": "50+",
+          "n": 377,
+          "selection_rate": 0.6737,
+          "impact_ratio": 1.0,
+          "ppv": 0.7559,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / Asian",
+          "n": 167,
+          "selection_rate": 0.2754,
+          "impact_ratio": 0.8519,
+          "ppv": 0.7609,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / Black",
+          "n": 198,
+          "selection_rate": 0.2525,
+          "impact_ratio": 0.781,
+          "ppv": 0.74,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / Hispanic",
+          "n": 167,
+          "selection_rate": 0.3234,
+          "impact_ratio": 1.0,
+          "ppv": 0.6852,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / White",
+          "n": 386,
+          "selection_rate": 0.2487,
+          "impact_ratio": 0.7691,
+          "ppv": 0.7396,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / Asian",
+          "n": 176,
+          "selection_rate": 0.2898,
+          "impact_ratio": 0.8961,
+          "ppv": 0.7451,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / Black",
+          "n": 218,
+          "selection_rate": 0.2202,
+          "impact_ratio": 0.6809,
+          "ppv": 0.625,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / Hispanic",
+          "n": 184,
+          "selection_rate": 0.1522,
+          "impact_ratio": 0.4706,
+          "ppv": 0.8571,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Male / White",
+          "n": 379,
+          "selection_rate": 0.2533,
+          "impact_ratio": 0.7833,
+          "ppv": 0.8958,
+          "violates_four_fifths": true
+        }
+      ]
+    },
+    "sample_reweighting": {
+      "summary": {
+        "selection_rate": 0.2379,
+        "accuracy": 0.5717,
+        "auc": 0.6931,
+        "n_selected": 446,
+        "n_total": 1875,
+        "threshold": 0.6992
+      },
+      "groups": [
+        {
+          "dimension": "gender",
+          "group": "Female",
+          "n": 918,
+          "selection_rate": 0.2386,
+          "impact_ratio": 1.0,
+          "ppv": 0.758,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "gender",
+          "group": "Male",
+          "n": 957,
+          "selection_rate": 0.2372,
+          "impact_ratio": 0.9943,
+          "ppv": 0.837,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "Asian",
+          "n": 343,
+          "selection_rate": 0.2245,
+          "impact_ratio": 0.7402,
+          "ppv": 0.7792,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "Black",
+          "n": 416,
+          "selection_rate": 0.1755,
+          "impact_ratio": 0.5786,
+          "ppv": 0.726,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "Hispanic",
+          "n": 351,
+          "selection_rate": 0.1823,
+          "impact_ratio": 0.6012,
+          "ppv": 0.7969,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "race_ethnicity",
+          "group": "White",
+          "n": 765,
+          "selection_rate": 0.3033,
+          "impact_ratio": 1.0,
+          "ppv": 0.8276,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "age_band",
+          "group": "18-29",
+          "n": 464,
+          "selection_rate": 0.0625,
+          "impact_ratio": 0.0962,
+          "ppv": 0.7586,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "age_band",
+          "group": "30-49",
+          "n": 1034,
+          "selection_rate": 0.1663,
+          "impact_ratio": 0.256,
+          "ppv": 0.8372,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "age_band",
+          "group": "50+",
+          "n": 377,
+          "selection_rate": 0.6499,
+          "impact_ratio": 1.0,
+          "ppv": 0.7755,
+          "violates_four_fifths": false
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / Asian",
+          "n": 167,
+          "selection_rate": 0.2395,
+          "impact_ratio": 0.6877,
+          "ppv": 0.75,
+          "violates_four_fifths": true
+        },
+        {
+          "dimension": "gender_x_race",
+          "group": "Female / Black",
+          "n": 198,
           "selection_rate": 0.2172,
-          "impact_ratio": 0.5921,
+          "impact_ratio": 0.6235,
           "ppv": 0.7907,
           "violates_four_fifths": true
         },
@@ -116,7 +457,7 @@
           "group": "Female / Hispanic",
           "n": 167,
           "selection_rate": 0.2156,
-          "impact_ratio": 0.5878,
+          "impact_ratio": 0.6189,
           "ppv": 0.7778,
           "violates_four_fifths": true
         },
@@ -124,384 +465,45 @@
           "dimension": "gender_x_race",
           "group": "Female / White",
           "n": 386,
-          "selection_rate": 0.2694,
-          "impact_ratio": 0.7346,
-          "ppv": 0.7404,
+          "selection_rate": 0.2591,
+          "impact_ratio": 0.7438,
+          "ppv": 0.74,
           "violates_four_fifths": true
         },
         {
           "dimension": "gender_x_race",
           "group": "Male / Asian",
           "n": 176,
-          "selection_rate": 0.233,
-          "impact_ratio": 0.6352,
-          "ppv": 0.7805,
+          "selection_rate": 0.2102,
+          "impact_ratio": 0.6036,
+          "ppv": 0.8108,
           "violates_four_fifths": true
         },
         {
           "dimension": "gender_x_race",
           "group": "Male / Black",
           "n": 218,
-          "selection_rate": 0.1468,
-          "impact_ratio": 0.4002,
-          "ppv": 0.625,
+          "selection_rate": 0.1376,
+          "impact_ratio": 0.3951,
+          "ppv": 0.6333,
           "violates_four_fifths": true
         },
         {
           "dimension": "gender_x_race",
           "group": "Male / Hispanic",
           "n": 184,
-          "selection_rate": 0.1739,
-          "impact_ratio": 0.4742,
-          "ppv": 0.8438,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / White",
-          "n": 379,
-          "selection_rate": 0.3668,
-          "impact_ratio": 1.0,
-          "ppv": 0.8849,
-          "violates_four_fifths": false
-        }
-      ]
-    },
-    "threshold_tuning": {
-      "summary": {
-        "selection_rate": 0.2512,
-        "accuracy": 0.5669,
-        "auc": 0.6931,
-        "n_selected": 471,
-        "n_total": 1875
-      },
-      "group_thresholds": {
-        "Female / Asian": 0.7016,
-        "Female / Black": 0.6825,
-        "Female / Hispanic": 0.6835,
-        "Female / White": 0.7152,
-        "Male / Asian": 0.6827,
-        "Male / Black": 0.6355,
-        "Male / Hispanic": 0.6309,
-        "Male / White": 0.7586
-      },
-      "groups": [
-        {
-          "dimension": "gender",
-          "group": "Female",
-          "n": 918,
-          "selection_rate": 0.2516,
-          "impact_ratio": 1.0,
-          "ppv": 0.7489,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender",
-          "group": "Male",
-          "n": 957,
-          "selection_rate": 0.2508,
-          "impact_ratio": 0.9966,
-          "ppv": 0.7958,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "Asian",
-          "n": 343,
-          "selection_rate": 0.2507,
-          "impact_ratio": 0.9934,
-          "ppv": 0.7558,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "Black",
-          "n": 416,
-          "selection_rate": 0.2524,
-          "impact_ratio": 1.0,
-          "ppv": 0.6857,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "Hispanic",
-          "n": 351,
-          "selection_rate": 0.2507,
-          "impact_ratio": 0.9933,
-          "ppv": 0.7841,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "White",
-          "n": 765,
-          "selection_rate": 0.251,
-          "impact_ratio": 0.9944,
-          "ppv": 0.8229,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "age_band",
-          "group": "18-29",
-          "n": 464,
-          "selection_rate": 0.0603,
-          "impact_ratio": 0.0892,
+          "selection_rate": 0.1522,
+          "impact_ratio": 0.4369,
           "ppv": 0.8214,
           "violates_four_fifths": true
         },
         {
-          "dimension": "age_band",
-          "group": "30-49",
-          "n": 1034,
-          "selection_rate": 0.1818,
-          "impact_ratio": 0.2688,
-          "ppv": 0.7872,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "age_band",
-          "group": "50+",
-          "n": 377,
-          "selection_rate": 0.6764,
-          "impact_ratio": 1.0,
-          "ppv": 0.7569,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / Asian",
-          "n": 167,
-          "selection_rate": 0.2515,
-          "impact_ratio": 0.9959,
-          "ppv": 0.7619,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / Black",
-          "n": 198,
-          "selection_rate": 0.2525,
-          "impact_ratio": 1.0,
-          "ppv": 0.74,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / Hispanic",
-          "n": 167,
-          "selection_rate": 0.2515,
-          "impact_ratio": 0.9959,
-          "ppv": 0.7619,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / White",
-          "n": 386,
-          "selection_rate": 0.2513,
-          "impact_ratio": 0.9951,
-          "ppv": 0.7423,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / Asian",
-          "n": 176,
-          "selection_rate": 0.25,
-          "impact_ratio": 0.99,
-          "ppv": 0.75,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / Black",
-          "n": 218,
-          "selection_rate": 0.2523,
-          "impact_ratio": 0.9991,
-          "ppv": 0.6364,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / Hispanic",
-          "n": 184,
-          "selection_rate": 0.25,
-          "impact_ratio": 0.99,
-          "ppv": 0.8043,
-          "violates_four_fifths": false
-        },
-        {
           "dimension": "gender_x_race",
           "group": "Male / White",
           "n": 379,
-          "selection_rate": 0.2507,
-          "impact_ratio": 0.9926,
-          "ppv": 0.9053,
-          "violates_four_fifths": false
-        }
-      ]
-    },
-    "sample_reweighting": {
-      "summary": {
-        "selection_rate": 0.2501,
-        "accuracy": 0.5755,
-        "auc": 0.6909,
-        "n_selected": 469,
-        "n_total": 1875,
-        "threshold": 0.6906
-      },
-      "groups": [
-        {
-          "dimension": "gender",
-          "group": "Female",
-          "n": 918,
-          "selection_rate": 0.2505,
+          "selection_rate": 0.3483,
           "impact_ratio": 1.0,
-          "ppv": 0.7609,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender",
-          "group": "Male",
-          "n": 957,
-          "selection_rate": 0.2497,
-          "impact_ratio": 0.9968,
-          "ppv": 0.8201,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "Asian",
-          "n": 343,
-          "selection_rate": 0.2449,
-          "impact_ratio": 0.7806,
-          "ppv": 0.7619,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "Black",
-          "n": 416,
-          "selection_rate": 0.1923,
-          "impact_ratio": 0.613,
-          "ppv": 0.7125,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "Hispanic",
-          "n": 351,
-          "selection_rate": 0.1852,
-          "impact_ratio": 0.5903,
-          "ppv": 0.8,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "race_ethnicity",
-          "group": "White",
-          "n": 765,
-          "selection_rate": 0.3137,
-          "impact_ratio": 1.0,
-          "ppv": 0.825,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "age_band",
-          "group": "18-29",
-          "n": 464,
-          "selection_rate": 0.0625,
-          "impact_ratio": 0.0924,
-          "ppv": 0.7586,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "age_band",
-          "group": "30-49",
-          "n": 1034,
-          "selection_rate": 0.1789,
-          "impact_ratio": 0.2645,
-          "ppv": 0.8324,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "age_band",
-          "group": "50+",
-          "n": 377,
-          "selection_rate": 0.6764,
-          "impact_ratio": 1.0,
-          "ppv": 0.7647,
-          "violates_four_fifths": false
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / Asian",
-          "n": 167,
-          "selection_rate": 0.2575,
-          "impact_ratio": 0.7283,
-          "ppv": 0.7674,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / Black",
-          "n": 198,
-          "selection_rate": 0.2273,
-          "impact_ratio": 0.6428,
-          "ppv": 0.8,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / Hispanic",
-          "n": 167,
-          "selection_rate": 0.2156,
-          "impact_ratio": 0.6097,
-          "ppv": 0.7778,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Female / White",
-          "n": 386,
-          "selection_rate": 0.2746,
-          "impact_ratio": 0.7767,
-          "ppv": 0.7358,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / Asian",
-          "n": 176,
-          "selection_rate": 0.233,
-          "impact_ratio": 0.6589,
-          "ppv": 0.7561,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / Black",
-          "n": 218,
-          "selection_rate": 0.1606,
-          "impact_ratio": 0.4541,
-          "ppv": 0.6,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / Hispanic",
-          "n": 184,
-          "selection_rate": 0.1576,
-          "impact_ratio": 0.4458,
-          "ppv": 0.8276,
-          "violates_four_fifths": true
-        },
-        {
-          "dimension": "gender_x_race",
-          "group": "Male / White",
-          "n": 379,
-          "selection_rate": 0.3536,
-          "impact_ratio": 1.0,
-          "ppv": 0.8955,
+          "ppv": 0.8939,
           "violates_four_fifths": false
         }
       ]

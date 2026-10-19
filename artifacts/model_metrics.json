@@ -12,8 +12,9 @@
     "race_ethnicity",
     "age_band"
   ],
-  "train_n": 5625,
+  "train_n": 4500,
+  "calibration_n": 1125,
   "test_n": 1875,
-  "test_accuracy_at_0.5": 0.6475,
-  "test_auc": 0.6931
+  "test_accuracy_at_0.5": 0.6491,
+  "test_auc": 0.6947
 }

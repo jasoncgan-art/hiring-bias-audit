@@ -58,6 +58,15 @@ def threshold_for_rate(scores, rate):
     return float(np.quantile(scores, 1.0 - rate))
 
 
+def fit_group_thresholds(calibration, rate):
+    return {group: threshold_for_rate(sub["score"].to_numpy(), rate)
+            for group, sub in calibration.groupby(INTERSECTION)}
+
+
+def apply_group_thresholds(test, thresholds, fallback):
+    return (test["score"] >= test[INTERSECTION].map(thresholds).fillna(fallback)).astype(int)
+
+
 def group_table(df, pred_col, dims):
     """Selection rate, disparate impact ratio, PPV, and counts per group."""
     rows = []
@@ -121,13 +130,15 @@ def plot_calibration(df, pred_col, out_path):
 def main():
     os.makedirs(FIG_DIR, exist_ok=True)
     df = load_test()
+    calibration = pd.read_csv(os.path.join(ART_DIR, "calibration_with_scores.csv"))
+    calibration[INTERSECTION] = calibration["gender"] + " / " + calibration["race_ethnicity"]
     dims = PROTECTED_DIMS + [INTERSECTION]
-    results = {"four_fifths_rule": FOUR_FIFTHS,
+    results = {"threshold_fit_split": "calibration", "calibration_n": len(calibration), "four_fifths_rule": FOUR_FIFTHS,
                "target_selection_rate": TARGET_SELECTION_RATE,
                "scenarios": {}}
 
     # ---------- BEFORE: single global threshold ----------
-    t0 = threshold_for_rate(df["score"].to_numpy(), TARGET_SELECTION_RATE)
+    t0 = threshold_for_rate(calibration["score"].to_numpy(), TARGET_SELECTION_RATE)
     df["pred_baseline"] = (df["score"] >= t0).astype(int)
     before = summarize(df, "pred_baseline")
     before["threshold"] = round(t0, 4)
@@ -137,14 +148,8 @@ def main():
     }
 
     # ---------- AFTER A: per-group threshold tuning ----------
-    df["pred_thresh_tuned"] = 0
-    tuned_thresholds = {}
-    for group, sub in df.groupby(INTERSECTION):
-        tg = threshold_for_rate(sub["score"].to_numpy(), TARGET_SELECTION_RATE)
-        tuned_thresholds[group] = round(float(tg), 4)
-        df.loc[df[INTERSECTION] == group, "pred_thresh_tuned"] = (
-            sub["score"] >= tg
-        ).astype(int).to_numpy()
+    tuned_thresholds = fit_group_thresholds(calibration, TARGET_SELECTION_RATE)
+    df["pred_thresh_tuned"] = apply_group_thresholds(df, tuned_thresholds, t0)
     tuned = summarize(df, "pred_thresh_tuned")
     results["scenarios"]["threshold_tuning"] = {
         "summary": tuned,
@@ -161,7 +166,7 @@ def main():
     w_train = train_df[INTERSECTION].map(len(train_df) / (len(tcounts) * tcounts)).to_numpy()
     rw_model = train_model(train_df, sample_weight=w_train)
     df["score_reweighted"] = rw_model.predict_proba(df[NUMERIC + CATEGORICAL])[:, 1]
-    t_rw = threshold_for_rate(df["score_reweighted"].to_numpy(), TARGET_SELECTION_RATE)
+    t_rw = threshold_for_rate(rw_model.predict_proba(calibration[NUMERIC + CATEGORICAL])[:, 1], TARGET_SELECTION_RATE)
     df["pred_reweighted"] = (df["score_reweighted"] >= t_rw).astype(int)
     rw_summary = summarize(df.assign(score=df["score_reweighted"]), "pred_reweighted")
     rw_summary["threshold"] = round(t_rw, 4)
@@ -202,3 +207,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

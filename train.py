@@ -69,12 +69,19 @@ def main():
     train_df, test_df = train_test_split(
         df, test_size=0.25, random_state=SEED, stratify=df["hire"]
     )
+    train_df, calibration_df = train_test_split(
+        train_df, test_size=0.20, random_state=SEED + 1, stratify=train_df["hire"]
+    )
+    calibration_df.to_csv(os.path.join(ART_DIR, "calibration.csv"), index=False)
     train_df.to_csv(os.path.join(ART_DIR, "train.csv"), index=False)
     test_df.to_csv(os.path.join(ART_DIR, "test.csv"), index=False)
 
     model = train_model(train_df)
     joblib.dump(model, os.path.join(ART_DIR, "model.joblib"))
 
+    calibration_out = calibration_df.copy()
+    calibration_out["score"] = model.predict_proba(calibration_df[NUMERIC + CATEGORICAL])[:, 1]
+    calibration_out.to_csv(os.path.join(ART_DIR, "calibration_with_scores.csv"), index=False)
     proba = model.predict_proba(test_df[NUMERIC + CATEGORICAL])[:, 1]
     pred = (proba >= 0.5).astype(int)
     acc = accuracy_score(test_df["hire"], pred)
@@ -85,6 +92,7 @@ def main():
         "features": NUMERIC + CATEGORICAL,
         "protected_attributes_excluded": ["gender", "race_ethnicity", "age_band"],
         "train_n": len(train_df),
+        "calibration_n": len(calibration_df),
         "test_n": len(test_df),
         "test_accuracy_at_0.5": round(float(acc), 4),
         "test_auc": round(float(auc), 4),
@@ -112,3 +120,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
